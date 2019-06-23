@@ -107,11 +107,24 @@ Esta seção visa abordar alguns dos termos que serão importantes no entendimen
 
 \subsection{Gamificação}
 
-Gamificação é uma forma de inserir elementos de jogos num processo totalmente fora desse contexto.
-% INSERIR REFERÊNCIA
-Ela está sendo usada para incentivar, motivar e melhorar a desempenho de uma empresa, ou para ajudar no ensino de algum tópico, por exemplo, deixando a atividade mais atrativa para as pessoas. Elementos esses que podem ser pontos, \textit{rankings} de colocação, jornadas, selos, entre outros. Para \cite{DeJesus}, ``gamificação é um meio promissor para a resolução de problemas de teste'' e ``pode trazer prazer para o desenvolvimento de software.'' Para \cite{Elgrably}, uma das grandes vantagens do uso da gamificação na educação é ``fornecer um sistema no qual os estudantes podem visualizar os efeitos de suas ações e aprendendo conforme a atividade acontece, deixando mais fácil o entendimento da relação das partes com o todo.''
+Gamificação é uma forma de inserir elementos de jogos num processo totalmente fora desse contexto \cite{Dale}. Ela está sendo usada para incentivar, motivar e melhorar a desempenho de uma empresa, ou para ajudar no ensino de algum tópico, por exemplo, deixando a atividade mais atrativa para as pessoas. Para \cite{DeJesus}, ``gamificação é um meio promissor para a resolução de problemas de teste'' e ``pode trazer prazer para o desenvolvimento de software.'' Para \cite{Elgrably}, uma das grandes vantagens do uso da gamificação na educação é ``fornecer um sistema no qual os estudantes podem visualizar os efeitos de suas ações e aprendendo conforme a atividade acontece, deixando mais fácil o entendimento da relação das partes com o todo.'' 
 
-% ABORDAR MAIS ELEMENTOS DE GAMIFICAÇÃO, E ENCERRAR COM UM LINK PARA A PRÓXIMA SUBSEÇÃO %
+
+\subsubsection{Elementos e mecânicas}
+
+Alguns elementos a ser implementados são essenciais para considerar um processo gamificado. Entre os mais comuns estão: pontos, conquistas, níveis, missões, jornadas (um conjunto de missões), quadro de líderes, notificações (para motivar o jogador diante de uma ação correta) e mecânicas anti-jogo (para limitar até onde um comportamento pode ser recompensado) \cite{Dale}.
+
+Além desses elementos, deve ser considerada a motivação de cada pessoa, e ela pode ocorrer das seguintes maneiras:
+
+\begin{itemize}
+	\item a expressão, onde as pessoas são motivadas e recompensadas por mostrar quem elas são (redes sociais são grandes exemplos disso);
+	\item a competição, onde as pessoas disputam entre si (ou com elas mesmas);
+	\item a exploração, onde as pessoas são motivadas por ter cada vez mais informações sobre algum conteúdo;
+	\item e a colaboração, onde as pessoas são motivadas por se sentir parte do todo, através de projetos colaborativos;
+\end{itemize}
+
+Também é importante ressaltar que recompensas intrínsecas (como o aprendizado e contribuição para o todo), geralmente, contribuem mais para motivação de uma pessoa do que uma recompensa extrínseca (como dinheiro e selos, por exemplo). A próxima subseção irá tratar sobre testes de software, que é uma parte do fluxo de desenvolvimento de software que pode se beneficiar bastante da gamificação.
+
 
 \subsection{Teste de software}
 
@@ -122,32 +135,29 @@ Entre as técnicas de teste é possível citar as funcionais e as estruturais. A
 
 As técnicas estruturais, conhecidas como ``caixa-branca'', são baseadas no código do software desenvolvido. Diferente das técnicas funcionais, esses testes são comumente feitos pelos programadores, e não testam as funcionalidades propriamente ditas. O mais comum de ocorrer é a verificação de comunicação entre os componentes, se o código segue boas práticas, se está bem otimizado, etc.  
 
-As técnicas baseadas em falhas, mais conhecidas como teste de mutação, consistem no desenvolvedor inserir erros no software propositalmente para verificar como ele irá se comportar, além de ser bastante utilizado pelos profissionais de teste para aprimorar casos de teste automatizados. Para esses casos, têm-se os mutantes, que são os programas modificados, e têm os casos de testes já desenvolvidos. Se esses casos de testes consigam detectar os mutantes, diz-se que este caso ``matou'' o mutante. Porém, nessa técnica, deve-se ter cuidado com os mutantes equivalentes, que são alterações em que o resultado da execução será o mesmo, com ou sem o equivalente, pois eles precisariam ser analisados a fim de verificar, de forma manual, se eles são ou não equivalentes. Isso elimina a praticidade de uma das formas mais práticas de detectar mutantes, que é através de testes automatizados. 
+As técnicas baseadas em falhas, mais conhecidas como teste de mutação, consistem no desenvolvedor inserir erros no software propositalmente para verificar como ele irá se comportar, além de ser bastante utilizado pelos profissionais de teste para aprimorar casos de teste automatizados. Para esses casos, têm-se os mutantes, que são os programas modificados, e têm os casos de testes já desenvolvidos. Se esses casos de testes consigam detectar os mutantes, diz-se que este caso ``matou'' o mutante. Porém, nessa técnica, deve-se ter cuidado com os mutantes equivalentes, que são alterações em que o resultado da execução será o mesmo, com ou sem o equivalente, pois eles precisariam ser analisados a fim de verificar, de forma manual, se eles são ou não equivalentes \cite{guilhon_2015}. Isso elimina a praticidade de uma das formas mais práticas de detectar mutantes, que é através de testes automatizados. 
 
 
 \subsubsection{Níveis de teste}
 Há três principais níveis de teste: de unidade, de integração e de sistema. Os testes de unidade fazem parte dos testes de caixa-branca, onde trechos específicos do código são testados, como métodos. Como esse tipo de teste se faz no código-fonte, ele deve ser feito pelo desenvolvedor. Tem como regra ser automatizado e reproduzível.
 
-Os testes de integração também fazem parte dos testes de caixa-branca, onde se verifica se a comunicação entre todos componentes do software implementado está funcionando corretamente, ou até mesmo a integração entre softwares diferentes. É feito após os testes de unidade e, diferente dele, os testes de integração pode envolver a equipe de testes. Os testes de sistema testam toda a aplicação desenvolvida, simulando um usuário final em todos os aspectos: desde a forma de uso até o ambiente, que deve ser o mais próximo possível que o usuário final terá.
+Os testes de integração também fazem parte dos testes de caixa-branca, onde se verifica se a comunicação entre todos componentes do software implementado está funcionando corretamente, ou até mesmo a integração entre softwares diferentes. É feito após os testes de unidade e, diferente dele, os testes de integração pode envolver a equipe de testes. Os testes de sistema testam toda a aplicação desenvolvida, simulando um usuário final em todos os aspectos: desde a forma de uso até o ambiente, que deve ser o mais próximo possível que o usuário final terá. A próxima subseção abordará de forma breve os \textit{frameworks}.
 
-% FAZER LINK COM A PRÓXIMA SEÇÃO %
 
 \subsubsection{\textit{Framework}}
 
-Entende-se um \textit{Framework} como uma solução única para problemas que são semelhantes, sendo implementada de forma diferente em cada problema, visto que ele deve ser flexível e extensível para isso. No contexto de desenvolvimento de software, o \textit{framework} é uma aplicação quase completa, cujos os ``pedaços'' faltantes serão implementados pelo desenvolvedor que utilizará o \textit{framework} como base para sua aplicação. \cite{ufcg}
+Entende-se um \textit{Framework} como uma solução única para problemas que são semelhantes, sendo implementada de forma diferente em cada problema, visto que ele deve ser flexível e extensível para isso. No contexto de desenvolvimento de software, o \textit{framework} é uma aplicação quase completa, cujos os ``pedaços'' faltantes serão implementados pelo desenvolvedor que utilizará o \textit{framework} como base para sua aplicação \cite{ufcg}. A próxima seção irá abordar os trabalhos relacionados com a proposta deste artigo e como se chegou neles.
 
-% REVISAR REFERÊNCIA, E FAZER LINK COM A PRÓXIMA SEÇÃO %
 
 \section{Trabalhos relacionados}
 
 \subsection{Metodologia de pesquisa}
 
-% subseção %
 Para come\c{c}ar esse trabalho, foi feita uma pesquisa sistem\'{a}tica, cujo objetivo foi confirmar que a gamifica\c{c}\~{a}o nos testes de software \'{e} um tema relevante. Para isso, utilizou-se a ferramenta Scopus, que \'{e} um grande reposit\'{o}rio de cita\c{c}\~{o}es e resumos revisados por especialistas das mais diversas \'{a}reas, oferecendo  v\'{a}rias estat\'{i}sticas e gr\'{a}ficos. Para os artigos utilizados nesse trabalho, os seguintes termos foram pesquisados:
 
 \textit{( TITLE-ABS-KEY ( gamification ) AND TITLE-ABS-KEY ( software AND testing ) )AND ( LIMIT-TO ( PUBYEAR , 2019 ) OR LIMIT-TO ( PUBYEAR , 2018 ) OR LIMIT-TO( PUBYEAR , 2017 ) OR LIMIT-TO ( PUBYEAR , 2016 ) OR LIMIT-TO ( PUBYEAR ,2015 ) ) AND ( LIMIT-TO ( SUBJAREA , ``COMP'' ) )}
 
-Essa \textit{query} de pesquisa filtra artigos publicados entre 2015 e 2019 que envolvem termos estritamente relacionados a gamifica\c{c}\~{a}o e testes de software, limitando-se \`{a} \'{a}rea da computa\c{c}\~{a}o. Em 9 de abril de 2019, a \textit{query} retornou 49 resultados. Abaixo h\'{a} um gr\'{a}fico mostrando o n\'{u}mero de artigos publicados desde 2015. Considerando que a pesquisa foi feita no in\'{i}cio de 2019, essa curva tem uma leve queda, mas a tend\^{e}ncia de crescimento nesta \'{a}rea \'{e} grande.
+Essa \textit{query} de pesquisa filtra artigos publicados entre 2015 e 2019 que envolvem termos estritamente relacionados a gamifica\c{c}\~{a}o e testes de software, limitando-se \`{a} \'{a}rea da computa\c{c}\~{a}o. Em 9 de abril de 2019, a \textit{query} retornou 49 resultados. A figura 1 traz um gr\'{a}fico mostrando o n\'{u}mero de artigos publicados desde 2015. Considerando que a pesquisa foi feita no in\'{i}cio de 2019, essa curva tem uma leve queda, mas a tend\^{e}ncia de crescimento nesta \'{a}rea \'{e} grande.
 
 %\pagebreak
 %\clearpage

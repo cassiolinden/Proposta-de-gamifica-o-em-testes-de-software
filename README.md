@@ -1,36 +1,7 @@
-tugunisinos: Classes LaTeX para Monografias e Artigos no Padrão da UNISINOS
+Proposta de gamificação nos testes de software
 ==============================================================
+Artigo apresentado como trabalho final da disciplina de Elaboração de Projetos pelo Curso de Sistemas de Informação da Universidade do Vale do Rio dos Sinos – UNISINOS.
 
-Neste pacote você encontra os arquivos necessários para formatar sua
-monografia ou artigo de TCC no padrão da UNISINOS usando LaTeX.
-A última versão sempre pode ser encontrada em
-http://sites.google.com/site/tugunisinos.
+**Resumo:**
 
-Os arquivos necessários são:
-- UNISINOSmonografia.cls: classe de documento LaTeX para monografias;
-- UNISINOSartigo.cls: classe de documento LaTeX para artigos;
-- unisinos.bst: estilo de referências bibliográficas.
-
-Para usá-los, basta copiar os dois arquivos para a pasta onde se encontra
-o documento .tex principal.
-
-Dentro do pacote há também exemplos de uso, compostos pelos arquivos:
-- exemplo-monografia.tex: arquivo do documento principal (que contém o texto), para o caso de monografias;
-- exemplo-artigo.tex: arquivo do documento principal (que contém o texto), para o caso de artigos;
-- exemplo.bib: base de referências bibliográficas;
-- escrita.{eps,jpg}: exemplo de imagem inserida no documento. A versão .eps
-  é usada quando se processa o documento usando o comando "latex".  A
-  versão .jpg é usada com "pdflatex";
-- exemplo.pdf: resultado final.
-
-Para processar os documentos de exemplo (pegando o caso da monografia), basta fazer:
-pdflatex exemplo-monografia
-bibtex exemplo-monografia
-pdflatex exemplo-monografia
-pdflatex exemplo-monografia
-
-Isso deve recriar o arquivo exemplo-monografia.pdf, que é o documento final.  Esteja
-atento para mensagens de erro e avisos que possam aparecer.
-
-Em caso de dúvida, envie mensagem para o grupo "tugunisinos" em
-http://groups.google.com/group/tugunisinos
+Hoje, o nível de exigência em aplicações por parte dos usuários está cada vez maior, e os testes de software têm um papel fundamental neste processo. Várias técnicas são usadas pelos profissionais, mas a maioria delas são repetitivas, como, por exemplo, a análise de valor limite. Para mudar esse panorama, propõe-se o uso da gamificação, que traz elementos de jogos em contextos organizacionais, como entrega de projetos, por exemplo. As pesquisas nessa área são relativamente recentes, e está em constante crescimento, conforme indicado em pesquisas na base de dados do Scopus. Os resultados obtidos pelos pesquisadores são animadores, visto que há um indicativo de que a produtividade do profissional aumenta com o uso da gamificação, porém, sua implantação em grandes empresas pode ser difícil.

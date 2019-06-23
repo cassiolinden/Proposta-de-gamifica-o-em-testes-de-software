@@ -435,7 +435,8 @@
 	\vfill%
 	{\noindent\centering\textbf{\@address}\par}%
 	{\noindent\centering\textbf{\@date}\par}%
-	\cleardoublepage%
+	%\cleardoublepage%
+	\newpage
 	\vspace*{4.4\baselineskip}%
 	{\noindent\centering\@author\par}%
 	\vspace*{11\baselineskip}%
@@ -443,7 +444,8 @@
 	\vspace*{4\baselineskip}%
 	{\pretolerance=10000\setlength\leftskip{.5\textwidth}\noindent{Artigo apresentado como trabalho final da disciplina de Elabora\c{c}\~{a}o de Projetos pelo \@course\ da Universidade do Vale do Rio dos Sinos -- UNISINOS}\par}%
 	\vspace*{2\baselineskip}%
-	{\raggedleft Professor: \@advisordegree\ \@advisor\par}%
+	{\raggedleft Professor: %\@advisordegree\
+	\@advisor\par}%
 	\vfill%
 	{\noindent\centering\@address\par}%
 	{\noindent\centering\@date\par}%

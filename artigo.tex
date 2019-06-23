@@ -31,6 +31,7 @@
 \usepackage[T1]{fontenc} % encoding da fonte (afeta a sep. de sílabas)
 \usepackage{graphicx} % comandos para gráficos e inclusão de figuras
 \usepackage{bibentry} % para inserir refs. bib. no meio do texto
+\usepackage{url} % para mostrar url dos sites referenciados
 
 %=======================================================================
 % Escolha do sistema para geração de referências bibliográficas.
@@ -93,8 +94,6 @@ Com a facilitação do acesso à tecnologia, cada vez mais pessoas têm acesso a
 
 Como é sabido, nenhum software está livre de problemas, e muitos detalhes que passam despercebidos pelos desenvolvedores, não passam no crivo de um bom testador. Para isso acontecer, técnicas dos mais variados tipos precisam ser postas em prática para o mínimo de problemas possível chegar ao usuário. Essas técnicas, em boa parte, são bastante repetitivas, o que pode acabar no desgaste e até tédio no profissional de testes. Para resolver isso, várias pesquisas relacionadas à aplicação da gamificação na área de testes têm sido feitas. A gamificação consiste em inserir elementos de jogos em contextos onde os mesmos não estão presentes. Para muitos pesquisadores, essa parece ser a solução para o tédio no trabalho, e um grande incentivador na produtividade do profissional.
 
-% Neste artigo serão apresentadas algumas pesquisas relacionadas ao uso da gamificação tanto no ambiente profissional, quanto no educacional, além de apresentar ferramentas que podem ser incorporadas num ambiente gamificado.
-
 Neste artigo será proposto uma forma de atrair testadores manuais para a área de testes automatizados de forma intuitiva, mesmo que este profissional tenha pouca experiência com desenvolvimento de software, com o auxílio de elementos de gamificação.
  
 
@@ -116,21 +115,17 @@ Ela está sendo usada para incentivar, motivar e melhorar a desempenho de uma em
 
 \subsection{Teste de software}
 
-Há várias definições possíveis para teste de software, sendo que mais comumente pode ser citado como um processo de executar um software com a intenção de encontrar defeitos, ou verificar se o software está fazendo o que deveria de acordo com seus requisitos. Para o ISTQB (\textit{International Software Testing Qualification Board}), é ``o processo que consiste em todas as atividades do ciclo de vida, tanto estáticas quanto dinâmicas, preocupado com a preparação, planejamento e avaliação de produtos de software e produtos de trabalho relacionados para determinar que eles atendem os requisitos especificados, para demonstrar que eles cumprem sua finalidade e para detectar defeitos.'' \cite{ISTQBGlos12} % REVISAR REFERÊNCIA %
+Há várias definições possíveis para teste de software, sendo que mais comumente pode ser citado como ``um processo de executar um software com a intenção de encontrar defeitos'' \cite{Myers-1979}, ou verificar se o software está fazendo o que deveria de acordo com seus requisitos \cite{RiosMoreira-2002}. Para o ISTQB (\textit{International Software Testing Qualification Board}), é ``o processo que consiste em todas as atividades do ciclo de vida, tanto estáticas quanto dinâmicas, preocupado com a preparação, planejamento e avaliação de produtos de software e produtos de trabalho relacionados para determinar que eles atendem os requisitos especificados, para demonstrar que eles cumprem sua finalidade e para detectar defeitos.'' \cite{ISTQB-Glos12}
 
 \subsubsection{Técnicas de teste}
-% COLOCAR MAIS REFERÊNCIAS; PERGUNTAR PARA PROFESSOR SE PODE COLOCAR SLIDES DE AULAS %
-Entre as técnicas de teste é possível citar as funcionais e as estruturais. As técnicas funcionais, também conhecidas como teste da caixa-preta, são baseadas num software que já está implementado, em que o usuário (ou um tester) testa se as funcionalidades do programa condizem com os requisitos. Entre as empresas que têm uma estrutura de testes, esta é a técnica mais comum de ser utilizada, apesar de não ser a mais eficiente na resolução de certos tipos de bugs, por exemplo. 
+Entre as técnicas de teste é possível citar as funcionais e as estruturais. As técnicas funcionais, também conhecidas como teste da caixa-preta, são baseadas num software que já está implementado, em que o usuário (ou um testador) testa se as funcionalidades do programa condizem com os requisitos. Entre as empresas que têm uma estrutura de testes, esta é a técnica mais comum de ser utilizada, apesar de não ser a mais eficiente na resolução de certos tipos de bugs, por exemplo. 
 
 As técnicas estruturais, conhecidas como ``caixa-branca'', são baseadas no código do software desenvolvido. Diferente das técnicas funcionais, esses testes são comumente feitos pelos programadores, e não testam as funcionalidades propriamente ditas. O mais comum de ocorrer é a verificação de comunicação entre os componentes, se o código segue boas práticas, se está bem otimizado, etc.  
 
 As técnicas baseadas em falhas, mais conhecidas como teste de mutação, consistem no desenvolvedor inserir erros no software propositalmente para verificar como ele irá se comportar, além de ser bastante utilizado pelos profissionais de teste para aprimorar casos de teste automatizados. Para esses casos, têm-se os mutantes, que são os programas modificados, e têm os casos de testes já desenvolvidos. Se esses casos de testes consigam detectar os mutantes, diz-se que este caso ``matou'' o mutante. Porém, nessa técnica, deve-se ter cuidado com os mutantes equivalentes, que são alterações em que o resultado da execução será o mesmo, com ou sem o equivalente, pois eles precisariam ser analisados a fim de verificar, de forma manual, se eles são ou não equivalentes. Isso elimina a praticidade de uma das formas mais práticas de detectar mutantes, que é através de testes automatizados. 
 
-% funcionais, estruturais, baseados em falhas
-% citar mutantes equivalentes
 
 \subsubsection{Níveis de teste}
-% COLOCAR MAIS REFERÊNCIAS; PERGUNTAR PARA PROFESSOR SE PODE COLOCAR SLIDES DE AULAS %
 Há três principais níveis de teste: de unidade, de integração e de sistema. Os testes de unidade fazem parte dos testes de caixa-branca, onde trechos específicos do código são testados, como métodos. Como esse tipo de teste se faz no código-fonte, ele deve ser feito pelo desenvolvedor. Tem como regra ser automatizado e reproduzível.
 
 Os testes de integração também fazem parte dos testes de caixa-branca, onde se verifica se a comunicação entre todos componentes do software implementado está funcionando corretamente, ou até mesmo a integração entre softwares diferentes. É feito após os testes de unidade e, diferente dele, os testes de integração pode envolver a equipe de testes. Os testes de sistema testam toda a aplicação desenvolvida, simulando um usuário final em todos os aspectos: desde a forma de uso até o ambiente, que deve ser o mais próximo possível que o usuário final terá.
@@ -165,51 +160,60 @@ Essa \textit{query} de pesquisa filtra artigos publicados entre 2015 e 2019 que 
 	%\begin{minipage}{.6\textwidth}
 		\includegraphics[width=\textwidth]{imagens/pubByYear.png}
 	%\end{minipage}
+	\begin{center}
+        Fonte: Scopus
+    \end{center}
 \end{figure}
 
-Para selecionar os artigos que ser\~{a}o abordados nessa pesquisa, foram verificados os t\'{i}tulos de cada artigo retornado pela \textit{query} pesquisada no Scopus que tivesse rela\c{c}\~{a}o direta com o t\'{o}pico desejado, passando pela leitura do resumo de cada um e encerrando com a verifica\c{c}\~{a}o da disponibilidade dos mesmos na base de dados da UNISINOS. Esta an\'{a}lise resultou na tabela:
+Para selecionar os artigos que ser\~{a}o abordados nessa pesquisa, foram verificados os t\'{i}tulos de cada artigo retornado pela \textit{query} pesquisada no Scopus que tivesse rela\c{c}\~{a}o direta com o t\'{o}pico desejado, passando pela leitura do resumo de cada um e a verifica\c{c}\~{a}o da disponibilidade dos mesmos na base de dados da UNISINOS. Após a leitura dos artigos, os mesmos foram divididos em três categorias: Estudo, \textit{Framework} e Jogo. Esta an\'{a}lise resultou na tabela 1:
 
-% NOMEAR E REFERENCIAR TABELA %
-
-\pagebreak
+%\pagebreak
 %\clearpage
-%\newpage
+\newpage
 
 \begin{table}[]
-\begin{tabular}{|l|l|l|}
+\caption{Artigos selecionados}
+\begin{tabular}{|l|l|l|l|}
 \hline
-\textbf{Authors}                                                                                            & \textbf{Title}                                                                                                                                                       & \textbf{Year} \\ \hline
-Fraser G.                                                                                                   & \begin{tabular}[c]{@{}l@{}}Gamification of software testing\end{tabular}                                                                                           & 2017          \\ \hline
-\begin{tabular}[c]{@{}l@{}}De Jesus G.M., Ferrari F.C.,\\ De Paula Porto D., Fabbri S.C.P.F.\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Gamification in software testing:\\ A characterization study\end{tabular}                                                               & 2018          \\ \hline
-Parizi R.M.                                                                                                 & \begin{tabular}[c]{@{}l@{}}On the gamification of human-centric\\traceability tasks in software testing\\ and coding\end{tabular}                                 & 2016          \\ \hline
-Elgrably I.S., Oliveira S.R.B.                                                                              & \begin{tabular}[c]{@{}l@{}}Gamification and evaluation of the use\\the agile tests in software quality\\subjects: The application of case\\studies\end{tabular} & 2018          \\ \hline
-\begin{tabular}[c]{@{}l@{}}Pedreira O., García F., Brisaboa N.,\\ Piattini M.\end{tabular}                  & \begin{tabular}[c]{@{}l@{}}Gamification in software engineering -\\A systematic mapping\end{tabular}                                                              & 2015          \\ \hline
-\begin{tabular}[c]{@{}l@{}}García F., Pedreira O., Piattini M.,\\ Cerdeira-Pena A., Penabad M.\end{tabular} & \begin{tabular}[c]{@{}l@{}}A framework for gamification in\\software engineering\end{tabular}                                                                       & 2017          \\ \hline
-Houshmand M., Paydar S.                                                                                     & \begin{tabular}[c]{@{}l@{}}EMVille: A gamification-based\\approach to address the equivalent\\mutant problem\end{tabular}                                        & 2017          \\ \hline
-Rojas J.M., Fraser G.                                                                                       & \begin{tabular}[c]{@{}l@{}}Code Defenders: A Mutation Testing\\Game\end{tabular}                                                                                    & 2016          \\ \hline
+\textbf{Autores} & \textbf{Título} & \textbf{Ano} & \textbf{Categoria} \\ \hline
+Fraser G. & Gamification of software testing & 2017 & Estudo \\ \hline
+\begin{tabular}[c]{@{}l@{}}De Jesus G.M., Ferrari F.C.,\\ De Paula Porto D.,\\ Fabbri S.C.P.F.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Gamification in software testing:\\ A characterization study\end{tabular} & 2018 & Estudo \\ \hline
+\begin{tabular}[c]{@{}l@{}}Elgrably I.S.,\\ Oliveira S.R.B.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Gamification and evaluation of\\ the use the agile tests in software\\ quality subjects: The application\\ of case studies\end{tabular} & 2018 & Estudo \\ \hline
+\begin{tabular}[c]{@{}l@{}}Pedreira O., García F.,\\ Brisaboa N., Piattini M.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Gamification in software\\ engineering - A systematic mapping\end{tabular} & 2015 & Estudo \\ \hline
+Parizi R.M. & \begin{tabular}[c]{@{}l@{}}On the gamification of\\ human-centric traceability tasks in\\ software testing and coding\end{tabular} & 2016 & Framework \\ \hline
+\begin{tabular}[c]{@{}l@{}}García F., Pedreira O.,\\ Piattini M., Cerdeira-\\ Pena A., Penabad M.\end{tabular} & \begin{tabular}[c]{@{}l@{}}A framework for gamification\\ in software engineering\end{tabular} & 2017 & Framework \\ \hline
+Houshmand M., Paydar S. & \begin{tabular}[c]{@{}l@{}}EMVille: A gamification-based\\ approach to address the\\ equivalent mutant problem\end{tabular} & 2017 & Framework \\ \hline
+Rojas J.M., Fraser G. & \begin{tabular}[c]{@{}l@{}}Code Defenders: A Mutation\\ Testing Game\end{tabular} & 2016 & Jogo \\ \hline
 \end{tabular}
+\begin{center}
+    Fonte: elaborada pelo autor
+\end{center}
 \end{table}
 
-Na subseção ``discussão dos trabalhos'', os artigos filtrados ser\~{a}o abordados e analisados mais a fundo.
+Na subseção ``discussão dos trabalhos'', os artigos filtrados ser\~{a}o brevemente abordados, considerando suas respectivas categorias.
 
 \subsection{Discussão dos trabalhos}
-\cite{Fraser01} afirma que desenvolver bons testes de software é difícil e não é algo destacado no ensino da programação, além de não ser uma atividade que os desenvolvedores apreciam. O mesmo também destaca alguns aspectos importantes para bons testes, como a intuição humana, o entendimento de como o software deve funcionar e de qual o contexto do mesmo. Considerando os grandes problemas que podem ser causados por testes feitos de forma inadequada, o autor explica que seu artigo explora uma nova forma de resolver o problema dos testes: a gamificação. Com isso, quem já trabalha na área terá mais chances de se destacar, conhecendo novas ferramentas e técnicas de teste, além de facilitar o ensino nas escolas, onde o assunto é negligenciado quando se trata de programação. O autor também destaca o uso dessas ferramentas em \textit{crowdsourcing}, onde várias pessoas trabalham numa só finalidade. Ele finaliza descrevendo que a aplicação de gamificação tem potencial de melhorar a qualidade dos testes de software e, consequentemente, do software em geral. O autor também cita que as pesquisas no meio ainda estão num estágio bastante inicial, porém, já mostrou resultados promissores. Talvez, por não ter sido aplicado numa escala maior, ainda não há resultados concretos, porém, o autor poderia ter levantado alguns dados quantitativos relacionados ao experimento citado no quarto tópico do artigo.
+\subsubsection{Estudo}
 
-\cite{DeJesus} apresentou um cenário geral de outros artigos que abordam gamificação nos testes de software, incluindo alguns dos artigos abordados aqui. O estudo foi dividido em seis categorias: contexto de aplicação, elementos de gamificação utilizados, objetivos da gamificação, técnicas de testes de software, níveis de teste e fases no processo de software. Considerando o contexto, os estudos eram focados em aplicações educacionais e industriais, sendo vários deles usados nos dois contextos; poucos eram exclusivos. Desses, os autores encontraram formas de aplicá-los em outros contextos. Por exemplo: um estudo que era focado no ambiente educacional sendo utilizado em ambientes industriais, e vice-versa. Sobre elementos de gamificação, os autores afirmam que a tríade PBL (\textit{Points, Badges, Leaderboard}, podendo ser traduzido como \textit{Pontos, Emblemas, Quadro de Líderes}) era a mais utilizada nos estudos, havendo apenas um estudo que não utilizou pontos e outro que não conseguiu aplicar sua metodologia no contexto correto. Entre os objetivos da gamificação, os autores apontam o maior desenvolvimento da criatividade, colaboração, engajamento, motivação e satisfação. Quanto às técnicas de teste, abordou-se a funcional, estrutural e baseados em falhas, sendo a última a mais utilizada nas aplicações de gamificação. Além disso, alguns estudos têm aplicabilidade nas três técnicas citadas. Nos níveis de teste, foram abordados os de unidade (dos quais a maioria são utilizados com outras ferramentas de automação), integração e de sistema. Aqui, os estudos tiveram foco nos testes de unidade. Os outros estudos não mencionaram em quais níveis eles poderiam ser aplicados, porém, os autores acreditam que a aplicabilidade é possível em todos os níveis citados. Quanto às fases no processo de software, os autores afirmam que praticamente todos os estudos podem ser aplicados em todo o processo, com exceção do planejamento e na configuração de dados e ambiente. Como sendo uma área nova na engenharia de software, os autores acreditam ser um tópico a ser monitorado quanto ao seu crescimento, especialmente na área de testes. 
+\cite{Fraser01} elenca alguns problemas no âmbito do desenvolvimento de software que testes feitos de forma inadequada podem causar, e explora uma forma de melhorar o trabalho do testador: a gamificação. Ele afirma que o uso dessa técnica pode ajudar no trabalho em equipe e no ensino de testes de software nas escolas, além de melhorar a qualidade dos testes.
 
-\cite{Rojas} trouxe o desenvolvimento de um jogo chamado \textit{Code Defenders}, cujo objetivo é desenvolver e ensinar testes de mutantes. Ele funciona da seguinte forma: dois jogadores, sendo um atacante e um defensor, através da técnica de testes de mutantes, devem melhorar tanto seus casos de teste quanto o próprio código-fonte. No jogo, o atacante deve, propositalmente, introduzir uma falha numa classe Java (um mutante), e o defensor deve escrever um caso de teste no JUnit capaz de detectar esta falha (matar o mutante). O jogo funciona por rodadas de ataque e defesa, onde o primeiro a jogar é o atacante. Quando o atacante produz um mutante com sucesso, o defensor terá a chance de produzir uma defesa contra esse mutante. Caso o defensor consiga matar o mutante, ele leva um ponto; caso contrário, o atacante fica com um ponto. Se o mutante for equivalente, o \textit{gameplay} muda: se o defensor suspeita que este mutante é equivalente, o atacante é desafiado a aceitar essa suspeita, perdendo pontos e passando-os para o defensor, ou criar um caso de teste que mata este mutante; neste caso, cada jogador fica com um ponto. Alguns desafios citados pelos autores e que pode diminuir o alcance é que ele deve ter, obrigatoriamente, dois jogadores humanos, e que devem ter experiência com código em Java. É bem interessante a ideia do jogo, e abstrair a parte do código, fazendo metáforas com outras situações, é bastante promissor, e pode trazer ainda mais pessoas para a área, tanto de desenvolvimento quanto para testes.
+\cite{DeJesus} apresentaram um cenário geral de outros artigos que abordam gamificação nos testes de software. Esses artigos foram aplicados na indústria e na educação; os elementos abordados foram pontos, emblemas e quadro de líderes; os objetivos eram o desenvolvimento da criatividade, colaboração, engajamento, motivação e satisfação; as técnicas de teste citadas foram a funcional, estrutural e baseados em falhas, sendo a última a mais utilizada; os níveis de teste elencados foram os de unidade, integração e de sistema. Apesar de estarem focado nos testes, os autores afirmam que praticamente todos os artigos estudados por eles podem ser aplicados em todo o processo, com exceção do planejamento e na configuração de dados e ambiente.
 
-\cite{Houshmand} traz um \textit{framework} para combater os mutantes equivalentes de forma eficiente. Os autores citam que testes de mutantes são muito custosos, e que quando os mesmos são equivalentes, trazem dificuldades de serem detectados pelos atacantes, fazendo o esforço não valer a pena. Alguns outros trabalhos foram citados pelos autores para atacar esse problema, como limitar algumas características do código desenvolvido para facilitar a detecção de mutantes, verificar padrões no código mutante, ou comparar os códigos originais com os mutantes no momento da compilação do código (também chamado de TCE). Concordando que mutantes não podem ser detectados sem interferência humana, os autores propõem um modelo de três camadas, em que primeira usa a técnica de TCE (sigla para \textit{Trivial Compiler Equivalence}, ou Equivalência do Compilador Trivial em português), a segunda usa a gamificação e a terceira pega os resultados das duas camadas e usa a técnica de \textit{machine-learning} para deixar a prática mais automatizada. A camada de gamificação se chamará \textit{EMVille}, em que especialistas entrarão em jornadas para resolver ou mitigar problemas de mutantes equivalentes. Porém, o método de pontuação não ficou claro, e não foi possível compreender de que formas o usuário irá pontuar, não pontuar ou, até mesmo, perder seus pontos. Além disso, na metáfora proposta para jogadores pouco familiarizados com o assunto, ficou bastante confuso, não parecendo ter relação com o problema que se está disposto a resolver. Porém, os autores afirmam que a proposta, testada num ambiente real, ajudou os profissionais a resolverem problemas de mutantes equivalentes.
+\cite{Elgrably} trouxeram um estudo feito com estudantes de graduação e pós-graduação relacionado ao ensino de testes ágeis nas disciplinas de Qualidade de Software ensinadas nessas modalidades de ensino. A motivação dos autores é que o ensino de métodos ágeis só faz sentido para o aluno se ele viver aquilo na prática. Como elementos de gamificação, os autores também utilizaram pontos, emblemas e quadro de líderes, além de premiações. 
 
-\cite{Elgrably} mostra um estudo feito com estudantes de graduação e pós-graduação relacionado ao ensino de testes ágeis nas disciplinas de Qualidade de Software ensinadas nessas modalidades de ensino. A motivação dos autores é que o ensino de métodos ágeis só faz sentido para o aluno se ele viver aquilo na prática, e na vivência dos autores, o ensino apenas teórico desse tópico faz com que o aluno perca o interesse e o deixa despreparado para o mercado, em que os métodos ágeis estão em crescente uso. Como elementos de gamificação, os autores também utilizaram pontos, emblemas e quadro de líderes, além disso, dependendo do tipo da aula, foram usadas premiações, lista de desafios e narrativas. Outros elementos estavam presentes na pontuação dos alunos, como bônus pelo não-uso do celular, pela participação e frequência nas aulas. Porém, o mesmo não tem fundamentação teórica relacionada aos elementos de metodologia ágil utilizados no estudo deles, o que dificulta o entendimento de quem não faz parte dessa área de estudo. Mesmo assim, o estudo deles traz algo curioso: mesmo com maior participação e maior comunicação entre os alunos (o que foi apontado como algo bastante positivo), as notas dos mesmos diminuíram em relação às aulas convencionais. Nesse caso em específico, a gamificação trouxe uma dificuldade maior nas atividades e avaliou de forma diferente a participação dos alunos, como já mencionado. Por conta disso, os autores trouxeram a adaptação desse conteúdo para uso com a gamificação em sala de aula como um problema a ser resolvido, além de usar uma plataforma on-line para computar os pontos, entre outras melhorias. Contudo, o saldo foi positivo, e houve, sim, uma melhoria geral no ensino com o uso de gamificação.
+\cite{Pedreira} mostraram um panorama geral de gamificação no desenvolvimento de software. Os autores afirmam que, junto com as áreas de desenvolvimento e requisitos, a área de testes é bastante adequada para a técnica. Assim como afirmado por \cite{Fraser01}, os autores verificaram que a gamificação ajuda no trabalho em equipe. Os elementos abordados foram os pontos, emblemas, quadro de líderes e jornadas. Eles também afirmaram que a gamificação deve ser aplicada com o maior número de elementos possível (além da pontuação) para ela não cair em desuso no decorrer no tempo.
 
-%%%%%%%%% vou retirar do artigo %%%%%%%%%
-% \cite{Parizi} trouxe um problema de rastreabilidade entre testes e o código-fonte, e propõe um \textit{framework} chamado GamiTracify para engajar e motivar os desenvolvedores nas tarefas de rastreabilidade. A ideia do autor é que quem desenvolve os testes incorporem (e mantenham, posteriormente) no código-fonte informações de rastreabilidade durante o desenvolvimento dos casos de teste, para evitar que as duas documentações fiquem dessincronizadas. Em comparação do uso desse \textit{framework} com uso de metodologias mais tradicionais apontaram uma melhoria nos links de rastreamento de qualidade. Entre os elementos de gamificação utilizados aqui estão os pontos, quadro de líderes, avatar e jornadas. Além da área de testes, este \textit{framework} também pode abranger as fases de desenvolvimento e manutenção, onde as informações de rastreabilidade são bastante úteis.
+\subsubsection{\textit{Framework}}
 
-\cite{Pedreira} traz um panorama geral de gamificação no desenvolvimento de software. Aqui, é afirmado que, junto com as áreas de desenvolvimento e requisitos, a área de testes é bastante adequada para gamificação, visto que elas compartilham características como o nível de dificuldade em relação a outras tarefas do desenvolvimento de software, a necessidade de colaboração e, até mesmo, um alto índice de tédio. Nessas atividades, os autores afirmam que a gamificação ajuda bastante no rendimento, pois impulsiona o trabalho em equipe. Porém, mesmo considerando uma boa atividade para aplicação da gamificação, os autores não encontraram estudos muito completos na área de testes. Sobre elementos de gamificação, assim como foi apontado por \cite{DeJesus}, os mais utilizados foram os pontos, emblemas e quadro de líderes, além de também citar jornadas, como no trabalho de \cite{Houshmand}. Um aspecto importante apontado aqui é que a gamificação deve ser aplicada com cuidado na engenharia de software: muitos dos trabalhos estudados pelos autores falharam ao serem aplicados, justamente pela maioria deles usarem apenas o sistema de pontos, e ignorar muitos dos mecanismos de gamificação possíveis, levando muito rapidamente ao desuso devido à repetitividade. Um paralelo que pode ser feito é com o cenário cada vez maior de jogos on-line, em que as desenvolvedoras que não incrementam seus jogos e não criam eventos para incentivar seus jogadores, por exemplo, acabam por perder público. 
+\cite{Parizi} trouxe um problema de rastreabilidade entre testes e o código-fonte, e propõe um \textit{framework} chamado GamiTracify para engajar e motivar os desenvolvedores nas tarefas de rastreabilidade. Os elementos de gamificação utilizados aqui estão os pontos, quadro de líderes, avatar e jornadas.
 
-%%%%%%%%% vou retirar do artigo %%%%%%%%%
-% \cite{Garcia} propuseram o GOAL (Gamification on Application Lifecycle Management), um \textit{framework} que possibilita aplicar a gamificação em qualquer fase do desenvolvimento de software. Os autores testaram o \textit{framework} numa empresa nas áreas de gerenciamento de requisitos, gestão de projetos e teste de software (onde foi mencionado apenas os testes unitários como objeto de estudo) e aplicaram os elementos de pontos, níveis, distintivos, quadro de líderes, gráfico social e desafio. O objetivo é de engajar usuários e melhorar seu desempenho, que foi alcançado, segundo os autores.
+\cite{Garcia} propuseram o GOAL (Gamification on Application Lifecycle Management), um \textit{framework} que possibilita aplicar a gamificação em qualquer fase do desenvolvimento de software. Os autores testaram o \textit{framework} numa empresa nas áreas de gerenciamento de requisitos, gestão de projetos e teste de software (onde foi mencionado apenas os testes unitários como objeto de estudo) e aplicaram os elementos de pontos, níveis, distintivos, quadro de líderes, gráfico social e desafio. O objetivo é de engajar usuários e melhorar seu desempenho, que foi alcançado, segundo os autores.
+
+\cite{Houshmand} mostraram um \textit{framework} para combater os mutantes equivalentes de forma eficiente. A ideia dos autores envolve o uso de \textit{machine-learning} com a gamificação para detectar mutantes equivalentes de forma automática. Os elementos utilizados foram os pontos e jornadas.
+
+\subsubsection{Jogo}
+
+\cite{Rojas} trouxeram o desenvolvimento de um jogo chamado \textit{Code Defenders}, cujo objetivo é desenvolver e ensinar testes de mutantes. Nele, dois jogadores, sendo um atacante e um defensor, através da técnica de testes de mutantes, devem melhorar tanto seus casos de teste quanto o próprio código-fonte. O jogo é bastante promissor, e pode trazer ainda mais pessoas para a área, tanto de desenvolvimento quanto para testes. 
 
 
 \section{Metodologia}
@@ -236,13 +240,13 @@ Em trabalhos futuros tem-se a ideia de aprofundar ainda mais no tema de gamifica
 % O idioma usado aqui deve necessariamente aparecer nos parâmetros do
 % \documentclass, no início do documento.
 %=======================================================================
-\begin{otherlanguage}{english}
-\othertitle{}
-\begin{abstract}
+%\begin{otherlanguage}{english}
+%\othertitle{}
+%\begin{abstract}
 
-\palavraschave{}
-\end{abstract}
-\end{otherlanguage}
+%\palavraschave{}
+%\end{abstract}
+%\end{otherlanguage}
 
 %=======================================================================
 % Referências

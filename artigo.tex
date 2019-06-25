@@ -112,19 +112,9 @@ Esta seção visa abordar alguns dos termos que serão importantes no entendimen
 
 Gamificação é uma forma de inserir elementos de jogos num processo totalmente fora desse contexto \cite{Dale}. Ela está sendo usada para incentivar, motivar e melhorar a desempenho de uma empresa, ou para ajudar no ensino de algum tópico, por exemplo, deixando a atividade mais atrativa para as pessoas. Para \cite{DeJesus}, ``gamificação é um meio promissor para a resolução de problemas de teste'' e ``pode trazer prazer para o desenvolvimento de software.'' Para \cite{Elgrably}, uma das grandes vantagens do uso da gamificação na educação é ``fornecer um sistema no qual os estudantes podem visualizar os efeitos de suas ações e aprendendo conforme a atividade acontece, deixando mais fácil o entendimento da relação das partes com o todo.'' 
 
+Alguns elementos a ser implementados são essenciais para considerar um processo gamificado. Entre os mais comuns estão: pontos, conquistas, níveis, missões, jornadas (um conjunto de missões), quadro de líderes, notificações (para motivar o jogador diante de uma ação correta) e mecânicas anti-jogo (para limitar até onde um comportamento pode ser recompensado) \cite{Dale}. Complementando:
 
-\subsubsection{Elementos e mecânicas \textcolor{red}{essa subsubsection é importante? É a única. Não pode ser um parágrafo?}}
-
-Alguns elementos a ser implementados são essenciais para considerar um processo gamificado. Entre os mais comuns estão: pontos, conquistas, níveis, missões, jornadas (um conjunto de missões), quadro de líderes, notificações (para motivar o jogador diante de uma ação correta) e mecânicas anti-jogo (para limitar até onde um comportamento pode ser recompensado) \cite{Dale}. Além desses elementos, deve ser considerada a motivação de cada pessoa, e ela pode ocorrer das seguintes maneiras: \textcolor{red}{reduzir a frase em uma palavra para ganhar a linha !!!}
-
-\todo[inline]{Cristiano: avalie se realmente é importante itemizar. Pode escrever em um parágrafo colocando itens (\textit{i}) xxxx; (\textit{ii}) yyy.}
-
-\begin{itemize}
-	\item a expressão, onde as pessoas são motivadas e recompensadas por mostrar quem elas são (redes sociais são grandes exemplos disso);
-	\item a competição, onde as pessoas disputam entre si (ou com elas mesmas);
-	\item a exploração, onde as pessoas são motivadas por ter cada vez mais informações sobre algum conteúdo;
-	\item e a colaboração, onde as pessoas são motivadas por se sentir parte do todo, através de projetos colaborativos;
-\end{itemize}
+(\textit{i.}) A expressão, onde as pessoas são motivadas e recompensadas por mostrar quem elas são (redes sociais são grandes exemplos disso); (\textit{ii.}) a competição, onde as pessoas disputam entre si (ou com elas mesmas); (\textit{iii.}) a exploração, onde as pessoas são motivadas por ter cada vez mais informações sobre algum conteúdo; (\textit{iv.}) e a colaboração, onde as pessoas são motivadas por se sentir parte do todo, através de projetos colaborativos;
 
 Também é importante ressaltar que recompensas intrínsecas (como o aprendizado e contribuição para o todo), geralmente, contribuem mais para motivação de uma pessoa do que uma recompensa extrínseca (como dinheiro e selos, por exemplo). A próxima subseção irá tratar sobre testes de software, que é uma parte do fluxo de desenvolvimento de software que pode se beneficiar bastante da gamificação.
 
@@ -134,13 +124,13 @@ Também é importante ressaltar que recompensas intrínsecas (como o aprendizado
 Há várias definições possíveis para teste de software, sendo que mais comumente pode ser citado como ``um processo de executar um software com a intenção de encontrar defeitos'' \cite{Myers-1979}, ou verificar se o software está fazendo o que deveria de acordo com seus requisitos \cite{RiosMoreira-2002}. Para o ISTQB (\textit{International Software Testing Qualification Board}), é ``o processo que consiste em todas as atividades do ciclo de vida, tanto estáticas quanto dinâmicas, preocupado com a preparação, planejamento e avaliação de produtos de software e produtos de trabalho relacionados para determinar que eles atendem os requisitos especificados, para demonstrar que eles cumprem sua finalidade e para detectar defeitos.'' \cite{ISTQB-Glos12}
 
 \subsubsection{Técnicas de teste}
-\todo[inline]{Cristiano: Essa subseção tem 3 parágrafos, i.e., proporcionalmente maior que as próximas. Poderia no mínimo reduzir 1 parágrafo.}
+%\todo[inline]{Cristiano: Essa subseção tem 3 parágrafos, i.e., proporcionalmente maior que as próximas. Poderia no mínimo reduzir 1 parágrafo.}
 
 Entre as técnicas de teste é possível citar as funcionais e as estruturais. As técnicas funcionais, também conhecidas como teste da caixa-preta, são baseadas num software que já está implementado, em que o usuário (ou um testador) testa se as funcionalidades do programa condizem com os requisitos. Entre as empresas que têm uma estrutura de testes, esta é a técnica mais comum de ser utilizada, apesar de não ser a mais eficiente na resolução de certos tipos de bugs, por exemplo. 
 
 As técnicas estruturais, conhecidas como ``caixa-branca'', são baseadas no código do software desenvolvido. Diferente das técnicas funcionais, esses testes são comumente feitos pelos programadores, e não testam as funcionalidades propriamente ditas. O mais comum de ocorrer é a verificação de comunicação entre os componentes, se o código segue boas práticas, se está bem otimizado, etc.  
 
-As técnicas baseadas em falhas, mais conhecidas como teste de mutação, consistem no desenvolvedor inserir erros no software propositalmente para verificar como ele irá se comportar, além de ser bastante utilizado pelos profissionais de teste para aprimorar casos de teste automatizados. Para esses casos, têm-se os mutantes, que são os programas modificados, e têm os casos de testes já desenvolvidos. Se esses casos de testes consigam detectar os mutantes, diz-se que este caso ``matou'' o mutante. Porém, nessa técnica, deve-se ter cuidado com os mutantes equivalentes, que são alterações em que o resultado da execução será o mesmo, com ou sem o equivalente, pois eles precisariam ser analisados a fim de verificar, de forma manual, se eles são ou não equivalentes \cite{guilhon_2015}. Isso elimina a praticidade de uma das formas mais práticas de detectar mutantes, que é através de testes automatizados. 
+As técnicas baseadas em falhas, mais conhecidas como teste de mutação, consistem no desenvolvedor inserir erros no software propositalmente para verificar como ele irá se comportar, além de ser bastante utilizado pelos profissionais de teste para aprimorar casos de teste automatizados.% Para esses casos, têm-se os mutantes, que são os programas modificados, e têm os casos de testes já desenvolvidos. Se esses casos de testes consigam detectar os mutantes, diz-se que este caso ``matou'' o mutante. Porém, nessa técnica, deve-se ter cuidado com os mutantes equivalentes, que são alterações em que o resultado da execução será o mesmo, com ou sem o equivalente, pois eles precisariam ser analisados a fim de verificar, de forma manual, se eles são ou não equivalentes \cite{guilhon_2015}. Isso elimina a praticidade de uma das formas mais práticas de detectar mutantes, que é através de testes automatizados. 
 
 
 \subsubsection{Níveis de teste}
@@ -151,30 +141,30 @@ Os testes de integração também fazem parte dos testes de caixa-branca, onde s
 
 \subsubsection{\textit{Framework}}
 
-Entende-se um \textit{Framework} como uma solução única para problemas que são semelhantes, sendo implementada de forma diferente em cada problema, visto que ele deve ser flexível e extensível para isso. No contexto de desenvolvimento de software, o \textit{framework} é uma aplicação quase completa, cujos os ``pedaços'' faltantes serão implementados pelo desenvolvedor que utilizará o \textit{framework} como base para sua aplicação \cite{ufcg}. A próxima seção irá abordar os trabalhos relacionados com a proposta deste artigo e como se chegou neles.
+Entende-se um \textit{Framework} como uma solução única para problemas semelhantes, sendo implementada de forma diferente em cada problema, visto que ele deve ser flexível e extensível para isso. No desenvolvimento de software, o \textit{framework} é uma aplicação quase completa, cujo o faltante será implementados pelo desenvolvedor que o utilizará como base para sua aplicação \cite{ufcg}. A próxima seção irá abordar os trabalhos relacionados com a proposta deste artigo e como se chegou neles.
 
 
 \section{Trabalhos relacionados}
 
 \subsection{Metodologia de pesquisa}
 
-Para come\c{c}ar esse trabalho, foi feita uma pesquisa sistem\'{a}tica, cujo objetivo foi confirmar que a gamifica\c{c}\~{a}o nos testes de software \'{e} um tema relevante. Para isso, utilizou-se a ferramenta Scopus, que \'{e} um grande reposit\'{o}rio de cita\c{c}\~{o}es e resumos revisados por especialistas das mais diversas \'{a}reas, oferecendo  v\'{a}rias estat\'{i}sticas e gr\'{a}ficos. Para os artigos utilizados nesse trabalho, os seguintes termos foram pesquisados:
+Para come\c{c}ar esse trabalho, foi feita uma pesquisa sistem\'{a}tica, cujo objetivo foi confirmar que a gamifica\c{c}\~{a}o nos testes de software \'{e} um tema relevante. Para isso, utilizou-se o Scopus, que \'{e} um grande reposit\'{o}rio de cita\c{c}\~{o}es e resumos revisados por especialistas das mais diversas \'{a}reas, oferecendo  v\'{a}rias estat\'{i}sticas e gr\'{a}ficos. A \textit{query} utilizada foi a seguinte:
 
 \textit{( TITLE-ABS-KEY ( gamification ) AND TITLE-ABS-KEY ( software AND testing ) )AND ( LIMIT-TO ( PUBYEAR , 2019 ) OR LIMIT-TO ( PUBYEAR , 2018 ) OR LIMIT-TO( PUBYEAR , 2017 ) OR LIMIT-TO ( PUBYEAR , 2016 ) OR LIMIT-TO ( PUBYEAR ,2015 ) ) AND ( LIMIT-TO ( SUBJAREA , ``COMP'' ) )}
 
-Essa \textit{query} de pesquisa filtra artigos publicados entre 2015 e 2019 que envolvem termos estritamente relacionados a gamifica\c{c}\~{a}o e testes de software, limitando-se \`{a} \'{a}rea da computa\c{c}\~{a}o. Em 9 de abril de 2019, a \textit{query} retornou 49 resultados. A figura 1 traz um gr\'{a}fico mostrando o n\'{u}mero de artigos publicados desde 2015. Considerando que a pesquisa foi feita no in\'{i}cio de 2019, essa curva tem uma leve queda, mas a tend\^{e}ncia de crescimento nesta \'{a}rea \'{e} grande.
+Essa \textit{query} de pesquisa filtra artigos publicados entre 2015 e 2019 que envolvem termos estritamente relacionados a gamifica\c{c}\~{a}o e testes de software, limitando-se \`{a} \'{a}rea da computa\c{c}\~{a}o. Em 9 de abril de 2019, a \textit{query} retornou 49 resultados. A figura 1 traz um gr\'{a}fico mostrando o n\'{u}mero de artigos publicados desde 2015. %Considerando que a pesquisa foi feita no in\'{i}cio de 2019, essa curva tem uma leve queda, mas a tend\^{e}ncia de crescimento nesta \'{a}rea \'{e} grande.
 
-%\pagebreak
-%\clearpage
-%\newpage
+\pagebreak
+\clearpage
+\newpage
 
 \begin{figure}[!htbp]
 	\caption{Curva de artigos publicados de 2015 a 2019}
 	\label{fig:imagens/pubByYear.png}
-	\centering%
-	%\begin{minipage}{.6\textwidth}
+	\centering
+	\begin{minipage}{.1\textwidth}
 		\includegraphics[width=\textwidth]{imagens/pubByYear.png}
-	%\end{minipage}
+	\end{minipage}
 	\begin{center}
         Fonte: Scopus
     \end{center}
@@ -208,11 +198,8 @@ Rojas J.M., Fraser G. & \begin{tabular}[c]{@{}l@{}}Code Defenders: A Mutation\\ 
 %Na subseção ``discussão dos trabalhos'', os artigos filtrados ser\~{a}o brevemente abordados, considerando suas respectivas categorias.
 
 \subsection{Discussão dos trabalhos}
-\subsubsection{Estudo}
 
-\todo[inline]{Cristiano: sugiro retirar as subsubsections, pode organizar e deixar claro a separação no próprio texto.}
-
-\cite{Fraser01} elenca alguns problemas no âmbito do desenvolvimento de software que testes feitos de forma inadequada podem causar, e explora uma forma de melhorar o trabalho do testador: a gamificação. Ele afirma que o uso dessa técnica pode ajudar no trabalho em equipe e no ensino de testes de software nas escolas, além de melhorar a qualidade dos testes.
+Começando pelos estudos, \cite{Fraser01} elenca alguns problemas no âmbito do desenvolvimento de software que testes feitos de forma inadequada podem causar, e explora uma forma de melhorar o trabalho do testador: a gamificação. Ele afirma que o uso dessa técnica pode ajudar no trabalho em equipe e no ensino de testes de software nas escolas, além de melhorar a qualidade dos testes.
 
 \cite{DeJesus} apresentaram um cenário geral de outros artigos que abordam gamificação nos testes de software. Esses artigos foram aplicados na indústria e na educação; os elementos abordados foram pontos, emblemas e quadro de líderes; os objetivos eram o desenvolvimento da criatividade, colaboração, engajamento, motivação e satisfação; as técnicas de teste citadas foram a funcional, estrutural e baseados em falhas, sendo a última a mais utilizada; os níveis de teste elencados foram os de unidade, integração e de sistema. Apesar de estarem focado nos testes, os autores afirmam que praticamente todos os artigos estudados por eles podem ser aplicados em todo o processo, com exceção do planejamento e na configuração de dados e ambiente.
 
@@ -220,17 +207,13 @@ Rojas J.M., Fraser G. & \begin{tabular}[c]{@{}l@{}}Code Defenders: A Mutation\\ 
 
 \cite{Pedreira} mostraram um panorama geral de gamificação no desenvolvimento de software. Os autores afirmam que, junto com as áreas de desenvolvimento e requisitos, a área de testes é bastante adequada para a técnica. Assim como afirmado por \cite{Fraser01}, os autores verificaram que a gamificação ajuda no trabalho em equipe. Os elementos abordados foram os pontos, emblemas, quadro de líderes e jornadas. Eles também afirmaram que a gamificação deve ser aplicada com o maior número de elementos possível (além da pontuação) para ela não cair em desuso no decorrer no tempo.
 
-\subsubsection{\textit{Framework}}
-
-\cite{Parizi} trouxe um problema de rastreabilidade entre testes e o código-fonte, e propõe um \textit{framework} chamado GamiTracify para engajar e motivar os desenvolvedores nas tarefas de rastreabilidade. Os elementos de gamificação utilizados aqui estão os pontos, quadro de líderes, avatar e jornadas.
+Seguindo pelos frameworks, \cite{Parizi} trouxe um problema de rastreabilidade entre testes e o código-fonte, e propõe um \textit{framework} chamado GamiTracify para engajar e motivar os desenvolvedores nas tarefas de rastreabilidade. Os elementos de gamificação utilizados aqui estão os pontos, quadro de líderes, avatar e jornadas.
 
 \cite{Garcia} propuseram o GOAL (Gamification on Application Lifecycle Management), um \textit{framework} que possibilita aplicar a gamificação em qualquer fase do desenvolvimento de software. Os autores testaram o \textit{framework} numa empresa nas áreas de gerenciamento de requisitos, gestão de projetos e teste de software (onde foi mencionado apenas os testes unitários como objeto de estudo) e aplicaram os elementos de pontos, níveis, distintivos, quadro de líderes, gráfico social e desafio. O objetivo é de engajar usuários e melhorar seu desempenho, que foi alcançado, segundo os autores.
 
 \cite{Houshmand} mostraram um \textit{framework} para combater os mutantes equivalentes de forma eficiente. A ideia dos autores envolve o uso de \textit{machine-learning} com a gamificação para detectar mutantes equivalentes de forma automática. Os elementos utilizados foram os pontos e jornadas.
 
-\subsubsection{Jogo}
-
-\cite{Rojas} trouxeram o desenvolvimento de um jogo chamado \textit{Code Defenders}, cujo objetivo é desenvolver e ensinar testes de mutantes. Nele, dois jogadores, sendo um atacante e um defensor, através da técnica de testes de mutantes, devem melhorar tanto seus casos de teste quanto o próprio código-fonte. O jogo é bastante promissor, e pode trazer ainda mais pessoas para a área, tanto de desenvolvimento quanto para testes. 
+E no único jogo relacionado, \cite{Rojas} trouxeram o desenvolvimento do \textit{Code Defenders}, cujo objetivo é desenvolver e ensinar testes de mutantes. Nele, dois jogadores, sendo um atacante e um defensor, através da técnica de testes de mutantes, devem melhorar tanto seus casos de teste quanto o próprio código-fonte. O jogo é bastante promissor, e pode trazer ainda mais pessoas para a área, tanto de desenvolvimento quanto para testes. 
 
 
 \section{Metodologia}

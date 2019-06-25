@@ -32,6 +32,7 @@
 \usepackage{graphicx} % comandos para gráficos e inclusão de figuras
 \usepackage{bibentry} % para inserir refs. bib. no meio do texto
 \usepackage{url} % para mostrar url dos sites referenciados
+\usepackage{todonotes}
 
 %=======================================================================
 % Escolha do sistema para geração de referências bibliográficas.
@@ -95,6 +96,8 @@ Com a facilitação do acesso à tecnologia, cada vez mais pessoas têm acesso a
 Como é sabido, nenhum software está livre de problemas, e muitos detalhes que passam despercebidos pelos desenvolvedores, não passam no crivo de um bom testador. Para isso acontecer, técnicas dos mais variados tipos precisam ser postas em prática para o mínimo de problemas possível chegar ao usuário. Essas técnicas, em boa parte, são bastante repetitivas, o que pode acabar no desgaste e até tédio no profissional de testes. Para resolver isso, várias pesquisas relacionadas à aplicação da gamificação na área de testes têm sido feitas. A gamificação consiste em inserir elementos de jogos em contextos onde os mesmos não estão presentes. Para muitos pesquisadores, essa parece ser a solução para o tédio no trabalho, e um grande incentivador na produtividade do profissional.
 
 Neste artigo será proposto uma forma de atrair testadores manuais para a área de testes automatizados de forma intuitiva, mesmo que este profissional tenha pouca experiência com desenvolvimento de software, com o auxílio de elementos de gamificação.
+
+
  
 
 %=======================================================================
@@ -110,11 +113,11 @@ Esta seção visa abordar alguns dos termos que serão importantes no entendimen
 Gamificação é uma forma de inserir elementos de jogos num processo totalmente fora desse contexto \cite{Dale}. Ela está sendo usada para incentivar, motivar e melhorar a desempenho de uma empresa, ou para ajudar no ensino de algum tópico, por exemplo, deixando a atividade mais atrativa para as pessoas. Para \cite{DeJesus}, ``gamificação é um meio promissor para a resolução de problemas de teste'' e ``pode trazer prazer para o desenvolvimento de software.'' Para \cite{Elgrably}, uma das grandes vantagens do uso da gamificação na educação é ``fornecer um sistema no qual os estudantes podem visualizar os efeitos de suas ações e aprendendo conforme a atividade acontece, deixando mais fácil o entendimento da relação das partes com o todo.'' 
 
 
-\subsubsection{Elementos e mecânicas}
+\subsubsection{Elementos e mecânicas \textcolor{red}{essa subsubsection é importante? É a única. Não pode ser um parágrafo?}}
 
-Alguns elementos a ser implementados são essenciais para considerar um processo gamificado. Entre os mais comuns estão: pontos, conquistas, níveis, missões, jornadas (um conjunto de missões), quadro de líderes, notificações (para motivar o jogador diante de uma ação correta) e mecânicas anti-jogo (para limitar até onde um comportamento pode ser recompensado) \cite{Dale}.
+Alguns elementos a ser implementados são essenciais para considerar um processo gamificado. Entre os mais comuns estão: pontos, conquistas, níveis, missões, jornadas (um conjunto de missões), quadro de líderes, notificações (para motivar o jogador diante de uma ação correta) e mecânicas anti-jogo (para limitar até onde um comportamento pode ser recompensado) \cite{Dale}. Além desses elementos, deve ser considerada a motivação de cada pessoa, e ela pode ocorrer das seguintes maneiras: \textcolor{red}{reduzir a frase em uma palavra para ganhar a linha !!!}
 
-Além desses elementos, deve ser considerada a motivação de cada pessoa, e ela pode ocorrer das seguintes maneiras:
+\todo[inline]{Cristiano: avalie se realmente é importante itemizar. Pode escrever em um parágrafo colocando itens (\textit{i}) xxxx; (\textit{ii}) yyy.}
 
 \begin{itemize}
 	\item a expressão, onde as pessoas são motivadas e recompensadas por mostrar quem elas são (redes sociais são grandes exemplos disso);
@@ -131,6 +134,8 @@ Também é importante ressaltar que recompensas intrínsecas (como o aprendizado
 Há várias definições possíveis para teste de software, sendo que mais comumente pode ser citado como ``um processo de executar um software com a intenção de encontrar defeitos'' \cite{Myers-1979}, ou verificar se o software está fazendo o que deveria de acordo com seus requisitos \cite{RiosMoreira-2002}. Para o ISTQB (\textit{International Software Testing Qualification Board}), é ``o processo que consiste em todas as atividades do ciclo de vida, tanto estáticas quanto dinâmicas, preocupado com a preparação, planejamento e avaliação de produtos de software e produtos de trabalho relacionados para determinar que eles atendem os requisitos especificados, para demonstrar que eles cumprem sua finalidade e para detectar defeitos.'' \cite{ISTQB-Glos12}
 
 \subsubsection{Técnicas de teste}
+\todo[inline]{Cristiano: Essa subseção tem 3 parágrafos, i.e., proporcionalmente maior que as próximas. Poderia no mínimo reduzir 1 parágrafo.}
+
 Entre as técnicas de teste é possível citar as funcionais e as estruturais. As técnicas funcionais, também conhecidas como teste da caixa-preta, são baseadas num software que já está implementado, em que o usuário (ou um testador) testa se as funcionalidades do programa condizem com os requisitos. Entre as empresas que têm uma estrutura de testes, esta é a técnica mais comum de ser utilizada, apesar de não ser a mais eficiente na resolução de certos tipos de bugs, por exemplo. 
 
 As técnicas estruturais, conhecidas como ``caixa-branca'', são baseadas no código do software desenvolvido. Diferente das técnicas funcionais, esses testes são comumente feitos pelos programadores, e não testam as funcionalidades propriamente ditas. O mais comum de ocorrer é a verificação de comunicação entre os componentes, se o código segue boas práticas, se está bem otimizado, etc.  
@@ -175,7 +180,7 @@ Essa \textit{query} de pesquisa filtra artigos publicados entre 2015 e 2019 que 
     \end{center}
 \end{figure}
 
-Para selecionar os artigos que ser\~{a}o abordados nessa pesquisa, foram verificados os t\'{i}tulos de cada artigo retornado pela \textit{query} pesquisada no Scopus que tivesse rela\c{c}\~{a}o direta com o t\'{o}pico desejado, passando pela leitura do resumo de cada um e a verifica\c{c}\~{a}o da disponibilidade dos mesmos na base de dados da UNISINOS. Após a leitura dos artigos, os mesmos foram divididos em três categorias: Estudo, \textit{Framework} e Jogo. Esta an\'{a}lise resultou na tabela 1:
+Para selecionar os artigos que ser\~{a}o abordados nessa pesquisa, foram verificados os t\'{i}tulos de cada artigo retornado pela \textit{query} pesquisada no Scopus que tivesse rela\c{c}\~{a}o direta com o t\'{o}pico desejado, passando pela leitura do resumo de cada um e a verifica\c{c}\~{a}o da disponibilidade dos mesmos na base de dados da UNISINOS. Após a leitura dos artigos, os mesmos foram divididos em três categorias: Estudo, \textit{Framework} e Jogo. Esta an\'{a}lise resultou na Tabela 1:
 
 %\pagebreak
 %\clearpage
@@ -200,10 +205,12 @@ Rojas J.M., Fraser G. & \begin{tabular}[c]{@{}l@{}}Code Defenders: A Mutation\\ 
 \end{center}
 \end{table}
 
-Na subseção ``discussão dos trabalhos'', os artigos filtrados ser\~{a}o brevemente abordados, considerando suas respectivas categorias.
+%Na subseção ``discussão dos trabalhos'', os artigos filtrados ser\~{a}o brevemente abordados, considerando suas respectivas categorias.
 
 \subsection{Discussão dos trabalhos}
 \subsubsection{Estudo}
+
+\todo[inline]{Cristiano: sugiro retirar as subsubsections, pode organizar e deixar claro a separação no próprio texto.}
 
 \cite{Fraser01} elenca alguns problemas no âmbito do desenvolvimento de software que testes feitos de forma inadequada podem causar, e explora uma forma de melhorar o trabalho do testador: a gamificação. Ele afirma que o uso dessa técnica pode ajudar no trabalho em equipe e no ensino de testes de software nas escolas, além de melhorar a qualidade dos testes.
 
